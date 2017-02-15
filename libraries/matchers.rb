@@ -4,12 +4,12 @@ if defined?(ChefSpec)
 
   def installsite_windowsapp(resource)
     ChefSpec::Matchers::ResourceMatcher.new(:windowsapps_installsite,
-                                            :install,
+                                            :installsite,
                                             resource)
   end
   def installservice_windowsapp(resource)
     ChefSpec::Matchers::ResourceMatcher.new(:windowsapps_installservice,
-                                            :install,
+                                            :installservice,
                                             resource)
   end
 end
