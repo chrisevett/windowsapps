@@ -36,7 +36,7 @@ end
 include_recipe 'windowsapps'
 
 # poll_service is the service name
-windowsapps_installsite 'poll_service' do
+windowsapps_installservice'poll_service' do
   base_install_path 'c:\\services'
   app_version '2.6.4'
   feed_uri 'https://www.nuget.org/api/v2/'
