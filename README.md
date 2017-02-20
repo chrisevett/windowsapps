@@ -14,6 +14,24 @@ Chef 12.0 or later
 
 ## Usage
 
+
+### windowsapps::installservice
+
+```ruby
+include_recipe 'windowsapps'
+
+# poll_service is the service name
+windowsapps_installservice 'poll_service' do
+  file_name 'pollservice.exe'
+  base_install_path 'c:\\services'
+  package_version '2.6.4'
+  feed_uri 'https://www.nuget.org/api/v2/'
+  description "polling service"
+  display_name "pollservice"
+end
+```
+
+### installsite is still WIP
 ### windowsapps::installsite
 
 ```ruby
@@ -27,21 +45,6 @@ windowsapps_installsite 'webstore' do
   protocol :https
   port 443
   pool_name 'my_app_pool'
-end
-```
-
-### windowsapps::installservice
-
-```ruby
-include_recipe 'windowsapps'
-
-# poll_service is the service name
-windowsapps_installservice 'poll_service' do
-  base_install_path 'c:\\services'
-  app_version '2.6.4'
-  feed_uri 'https://www.nuget.org/api/v2/'
-  description "polling service"
-  display_name "pollservice"
 end
 ```
 
